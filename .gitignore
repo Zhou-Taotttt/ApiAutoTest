@@ -1,0 +1,14 @@
+.venv/
+.env
+.env.*
+!.env.example
+.idea/
+__pycache__/
+.pytest_cache/
+*.pyc
+reports/
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
