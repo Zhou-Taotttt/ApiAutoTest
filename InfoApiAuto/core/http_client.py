@@ -1,4 +1,4 @@
-# HTTP 请求客户端。这个文件负责统一处理域名、请求头、Token、超时和GET/POST请求
+# HTTP 请求客户端。负责统一处理域名、请求头、Token、超时和GET/POST/DELETE请求
 import requests
 
 
@@ -18,6 +18,7 @@ class HttpClient:
     def request(self, method, path, **kwargs):
         url = f"{self.base_url}/{path.lstrip('/')}"
         kwargs.setdefault("timeout", self.timeout)
+        # self.session.request(...)是 requests 库提供的方法，而这个方法的返回值类型就是：requests.Response对象
         return self.session.request(method=method, url=url, **kwargs)
 
     # 封装GET请求
@@ -26,6 +27,9 @@ class HttpClient:
 
     def post(self, path, **kwargs):
         return self.request("POST", path, **kwargs)
+
+    def delete(self, path, **kwargs):
+        return self.request("DELETE", path, **kwargs)
 
     def close(self):
         self.session.close()
