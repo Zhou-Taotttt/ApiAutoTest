@@ -14,6 +14,7 @@ class Settings:
     NETWORKS_PATH = os.getenv("NETWORKS_PATH", "")
     TOP_TOKENS_PATH = os.getenv("TOP_TOKENS_PATH", "")
     COLLECTED_TOKENS_PATH = os.getenv("COLLECTED_TOKENS_PATH", "")
+    COLLECT_RADAR_PATH = os.getenv("COLLECT_RADAR_PATH", "")
     TEST_EMAIL = os.getenv("TEST_EMAIL", "")
     TEST_CODE = os.getenv("TEST_CODE", "")
     REQUEST_TIMEOUT = int(os.getenv("REQUEST_TIMEOUT", "15"))
